@@ -1,10 +1,42 @@
 @model IEnumerable<MvcMovie.Models.Movie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Movies";
 }
 
-<h1>Index</h1>
+<h1>My Movies</h1>
+
+<form asp-controller="Movies" asp-action="Index" method="get" class="row g-2 mb-3">
+    <div class="col-sm-6 col-md-5 col-lg-4">
+        <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Search by title" />
+    </div>
+    <div class="col-sm-4 col-md-3 col-lg-2">
+        <select name="minYear" class="form-select">
+            <option value="">All years</option>
+@{
+    var years = ViewData["Years"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList;
+    var currentYear = ViewData["CurrentYear"]?.ToString();
+    if (years != null)
+    {
+        foreach (var y in years)
+        {
+            if (currentYear == y.Value)
+            {
+                <option value="@y.Value" selected>@y.Text</option>;
+            }
+            else
+            {
+                <option value="@y.Value">@y.Text</option>;
+            }
+        }
+    }
+}
+        </select>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <button type="submit" class="btn btn-primary w-100">Filter</button>
+    </div>
+</form>
 
 <p>
     <a asp-action="Create">Create New</a>

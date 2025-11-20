@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/new/MvcMovie/MvcMovie.csproj": {}
+    "/Users/new/Library/CloudStorage/OneDrive-BYU-PathwayWorldwide/MvcMovie/MvcMovie.csproj": {}
   },
   "projects": {
-    "/Users/new/MvcMovie/MvcMovie.csproj": {
+    "/Users/new/Library/CloudStorage/OneDrive-BYU-PathwayWorldwide/MvcMovie/MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/new/MvcMovie/MvcMovie.csproj",
+        "projectUniqueName": "/Users/new/Library/CloudStorage/OneDrive-BYU-PathwayWorldwide/MvcMovie/MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "/Users/new/MvcMovie/MvcMovie.csproj",
+        "projectPath": "/Users/new/Library/CloudStorage/OneDrive-BYU-PathwayWorldwide/MvcMovie/MvcMovie.csproj",
         "packagesPath": "/Users/new/.nuget/packages/",
-        "outputPath": "/Users/new/MvcMovie/obj/",
+        "outputPath": "/Users/new/Library/CloudStorage/OneDrive-BYU-PathwayWorldwide/MvcMovie/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/new/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -41,32 +41,18 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.10, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.10, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[8.0.8, )"
             }
           },
           "imports": [
@@ -80,6 +66,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[8.0.19, 8.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

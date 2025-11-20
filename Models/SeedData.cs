@@ -14,12 +14,8 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<MvcMovieContext>>()))
         {
-            // Look for any movies.
-            if (context.Movie.Any())
+            var seedMovies = new[]
             {
-                return;   // DB has been seeded
-            }
-            context.Movie.AddRange(
                 new Movie
                 {
                     Title = "When Harry Met Sally",
@@ -47,9 +43,45 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("1959-4-15"),
                     Genre = "Western",
                     Price = 3.99M
+                },
+                // Favorites
+                new Movie
+                {
+                    Title = "The Dark Knight",
+                    ReleaseDate = DateTime.Parse("2008-7-18"),
+                    Genre = "Action",
+                    Price = 10.99M
+                },
+                new Movie
+                {
+                    Title = "Inception",
+                    ReleaseDate = DateTime.Parse("2010-7-16"),
+                    Genre = "Sci-Fi",
+                    Price = 11.99M
+                },
+                new Movie
+                {
+                    Title = "Interstellar",
+                    ReleaseDate = DateTime.Parse("2014-11-7"),
+                    Genre = "Sci-Fi",
+                    Price = 12.99M
                 }
-            );
-            context.SaveChanges();
+            };
+
+            var added = false;
+            foreach (var movie in seedMovies)
+            {
+                if (!context.Movie.Any(m => m.Title == movie.Title))
+                {
+                    context.Movie.Add(movie);
+                    added = true;
+                }
+            }
+
+            if (added)
+            {
+                context.SaveChanges();
+            }
         }
     }
 }
